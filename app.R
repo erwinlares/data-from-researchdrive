@@ -1,6 +1,6 @@
 library(shiny)
 library(shinydashboard)
-library(palmerpenguins)
+#library(palmerpenguins)
 library(tidyverse)
 
 ui <- dashboardPage(
@@ -72,7 +72,8 @@ server <- function(input, output) {
     })
     
     output$plot2 <- renderPlot({
-        ggplot(data = penguins, aes(x = flipper_length_mm)) +
+        ggplot(data =  read_csv("/mnt/researchdrive/lares/public_data/palmerpenguins.csv"),
+               aes(x = flipper_length_mm)) +
             geom_histogram(aes(fill = species),
                            alpha = 0.5,
                            position = "identity") +
