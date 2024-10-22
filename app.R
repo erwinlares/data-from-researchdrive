@@ -84,7 +84,7 @@ server <- function(input, output) {
     })
     
     output$plot3 <- renderPlot({
-        ggplot(data =  read_csv("/home/rdrive-lares-connect/rdrive/lares/public_data/original_palmerpenguins.csv"), 
+        ggplot(data =  read_csv("/mnt/researchdrive/lares/public_data/palmerpenguins.csv"), 
                aes(x = flipper_length_mm,
                    y = body_mass_g)) +
             geom_point(aes(color = species, 
